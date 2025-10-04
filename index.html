@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HalaTV</title>
+    <style>
+        /* --- الإعدادات العامة --- */
+        :root {
+            --primary-color: #BB86FC; /* بنفسجي فاتح */
+            --background-color: #121212; /* أسود داكن */
+            --surface-color: #1E1E1E; /* لون الأسطح */
+            --text-color: #E1E1E1; /* لون النص الأساسي */
+            --hover-color: #2C2C2C; /* لون عند التمرير */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- الشريط العلوي --- */
+        .header {
+            background-color: var(--surface-color);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        /* --- شريط البحث --- */
+        .search-container {
+            padding: 15px 20px;
+        }
+        
+        #searchInput {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--surface-color);
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 16px;
+            box-sizing: border-box; /* يمنع تغيير حجم العنصر عند إضافة padding */
+        }
+
+        /* --- قائمة القنوات --- */
+        .channel-list {
+            list-style: none;
+            padding: 0 10px;
+            margin: 0;
+        }
+
+        .channel-list li {
+            margin-bottom: 10px;
+        }
+
+        .channel-list li a {
+            background-color: var(--surface-color);
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 12px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .channel-list li a:hover, .channel-list li a:active {
+            background-color: var(--hover-color);
+            transform: scale(1.02); /* تأثير تكبير بسيط عند النقر */
+        }
+
+        .channel-icon {
+            width: 24px;
+            height: 24px;
+            margin-left: 15px; /* في العربي، الـ margin-left يكون في الجهة اليسرى من الأيقونة */
+            fill: var(--primary-color); /* تلوين الأيقونة */
+        }
+
+        .channel-name {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>HalaTV</h1>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="searchChannels()" placeholder="ابحث عن قناة...">
+    </div>
+
+    <ul class="channel-list" id="channelList">
+        <!-- ================= قائمة القنوات تبدأ هنا ================= -->
+        
+        <li>
+            <a href="http://het119a.4rouwanda-shop.store/live/918454578001/index.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">bein sports 1 (720p)</span>
+            </a>
+        </li>
+        <li>
+        <a href="http://het119a.4rouwanda-shop.store/live/978480008877005/index.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">bein sports 1 (360p)</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="http://het119a.4rouwanda-shop.store/live/69854211/index.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">bein sports 2 (720p)</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="http://het119a.4rouwanda-shop.store/live/10011244/index.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">bein sports 2 (360p)</span>
+            </a>
+        </li>
+<li>
+            <a href="http://het119a.4rouwanda-shop.store/live/645587700/index.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">bein sports 3 (720p)</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="http://het119a.4rouwanda-shop.store/live/161988840/index.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">bein sports 3 (360p)</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="http://het119a.4rouwanda-shop.store/live/9787488847/index.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">bein sports 4</span>
+            </a>
+            <li>
+            <a href="http://het119a.4rouwanda-shop.store/live/610303030/index.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">bein sports 5</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="http://het119a.4rouwanda-shop.store/live/1515000000/index.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">bein sports 6</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="http://het119a.4rouwanda-shop.store/live/33523510/index.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">bein sports 7</span>
+            </a>
+        <!-- لإضافة قناة جديدة، انسخ والصق هذا القالب بالكامل -->
+        <!--
+        <li>
+            <a href="ضع_الرابط_هنا.m3u8">
+                <svg class="channel-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span class="channel-name">ضع اسم القناة هنا</span>
+            </a>
+        </li>
+        -->
+        
+        <!-- ================= قائمة القنوات تنتهي هنا ================= -->
+    </ul>
+
+    <script>
+        function searchChannels() {
+            // الحصول على نص البحث
+            let input = document.getElementById('searchInput');
+            let filter = input.value.toUpperCase();
+            
+            // الحصول على قائمة القنوات
+            let ul = document.getElementById("channelList");
+            let li = ul.getElementsByTagName('li');
+
+            // المرور على كل عناصر القائمة وإخفاء ما لا يطابق البحث
+            for (let i = 0; i < li.length; i++) {
+                let channelNameSpan = li[i].getElementsByClassName("channel-name")[0];
+                let txtValue = channelNameSpan.textContent || channelNameSpan.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
